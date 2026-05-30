@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Windows 95 — Tanzim Hossain Ayon</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=VT323&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- BOOT SCREEN -->
+<div id="boot-screen">
+  <div class="boot-content">
+    <div class="win95-logo">
+      <div class="logo-flag">
+        <div class="flag-r flag-red"></div>
+        <div class="flag-r flag-green"></div>
+        <div class="flag-r flag-blue"></div>
+        <div class="flag-r flag-yellow"></div>
+      </div>
+      <div class="logo-text">Windows<span>95</span></div>
+    </div>
+    <div class="boot-bar-wrap">
+      <div class="boot-bar"><div id="boot-fill"></div></div>
+    </div>
+    <p class="boot-msg" id="boot-msg">Starting Windows 95...</p>
+  </div>
+</div>
+
+<!-- DESKTOP -->
+<div id="desktop" class="hidden">
+  <!-- WALLPAPER -->
+  <canvas id="wallpaper"></canvas>
+
+  <!-- DESKTOP ICONS -->
+  <div class="desktop-icons">
+    <div class="icon" ondblclick="openWindow('mycomputer')">
+      <div class="icon-img">🖥️</div>
+      <div class="icon-label">My Computer</div>
+    </div>
+    <div class="icon" ondblclick="openWindow('about')">
+      <div class="icon-img">👤</div>
+      <div class="icon-label">About Me</div>
+    </div>
+    <div class="icon" ondblclick="openWindow('skills')">
+      <div class="icon-img">💻</div>
+      <div class="icon-label">My Skills</div>
+    </div>
+    <div class="icon" ondblclick="openWindow('notepad')">
+      <div class="icon-img">📝</div>
+      <div class="icon-label">Notepad</div>
+    </div>
+    <div class="icon" ondblclick="openWindow('research')">
+      <div class="icon-img">🔬</div>
+      <div class="icon-label">Research</div>
+    </div>
+    <div class="icon" ondblclick="openWindow('contact')">
+      <div class="icon-img">📧</div>
+      <div class="icon-label">Contact</div>
+    </div>
+    <div class="icon" ondblclick="openWindow('recycle')">
+      <div class="icon-img">🗑️</div>
+      <div class="icon-label">Recycle Bin</div>
+    </div>
+    <div class="icon" ondblclick="openWindow('ie')">
+      <div class="icon-img">🌐</div>
+      <div class="icon-label">Internet Explorer</div>
+    </div>
+  </div>
+
+  <!-- WINDOWS CONTAINER -->
+  <div id="windows-container"></div>
+
+  <!-- TASKBAR -->
+  <div class="taskbar">
+    <button class="start-btn" onclick="toggleStart()">
+      <span class="start-logo">⊞</span> Start
+    </button>
+    <div class="taskbar-divider"></div>
+    <div class="taskbar-items" id="taskbar-items"></div>
+    <div class="taskbar-clock" id="clock"></div>
+  </div>
+
+  <!-- START MENU -->
+  <div id="start-menu" class="start-menu hidden">
+    <div class="start-sidebar">
+      <span>Windows 95</span>
+    </div>
+    <div class="start-items">
+      <div class="start-item" onclick="openWindow('about');toggleStart()">👤 About Tanzim</div>
+      <div class="start-item" onclick="openWindow('skills');toggleStart()">💻 Skills</div>
+      <div class="start-item" onclick="openWindow('research');toggleStart()">🔬 Research</div>
+      <div class="start-item" onclick="openWindow('contact');toggleStart()">📧 Contact</div>
+      <div class="start-divider"></div>
+      <div class="start-item" onclick="openWindow('notepad');toggleStart()">📝 Notepad</div>
+      <div class="start-item" onclick="openWindow('ie');toggleStart()">🌐 Internet Explorer</div>
+      <div class="start-divider"></div>
+      <div class="start-item" onclick="shutdown()">🔴 Shut Down...</div>
+    </div>
+  </div>
+</div>
+
+<!-- SHUTDOWN SCREEN -->
+<div id="shutdown-screen" class="hidden">
+  <p>It is now safe to turn off your computer.</p>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
